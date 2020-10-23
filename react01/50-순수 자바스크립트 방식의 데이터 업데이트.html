@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>순수 자바스크립트 방식의 데이터 업데이트</title>
+  <style>
+    h1 {
+      width: 260px;
+      height: 40px;
+      margin: 0 auto;
+      padding: 20px 30px;
+      line-height: 40px;
+      text-align: center;
+      border: 5px dotted pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <!-- <h1>17:24:30</h1> -->
+  </div>
+
+  <script>
+    const $root = document.querySelector('#root')
+
+    setInterval(function () {
+      const now = new Date()
+
+      const hh = now.getHours()
+      const mm = now.getMinutes()
+      const ss = now.getSeconds()
+
+      $root.innerHTML = `
+        <h1>
+          ${hh} : ${mm} : ${ss}
+        </h1>
+      `
+
+    }, 1000);
+  </script>
+</body>
+
+</html>

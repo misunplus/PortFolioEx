@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>리액트 방식의 데이터 업데이트</title>
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    h1 {
+      width: 260px;
+      height: 40px;
+      margin: 0 auto;
+      padding: 20px 30px;
+      line-height: 40px;
+      text-align: center;
+      border: 5px dotted pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <!-- <h1>17:24:30</h1> -->
+  </div>
+
+  <script type="text/babel">
+    const $root = document.querySelector('#root')
+
+    setInterval(function () {
+      const now = new Date()
+
+      const hh = now.getHours()
+      const mm = now.getMinutes()
+      const ss = now.getSeconds()
+
+      const $h1 = <h1>{hh} : {mm} : {ss}</h1>
+
+      ReactDOM.render($h1, $root);
+
+    }, 1000);
+  </script>
+</body>
+
+</html>

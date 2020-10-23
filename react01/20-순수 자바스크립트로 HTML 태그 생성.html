@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>.creatElement(), .createTextNode() 로 요소생성</title>
+</head>
+
+<body>
+
+  <h1>순수 자바스크립트로 요소 생성</h1>
+
+  <hr>
+
+  <script>
+    const $h1 = document.createElement('h1');
+    const $text = document.createTextNode('안녕, 자바스크립트');
+
+    $h1.appendChild($text);
+
+    document.body.appendChild($h1);
+  </script>
+
+</body>
+
+</html>
